@@ -20,14 +20,14 @@ export function processZoteroAnnotationNotes(noteStr: string) {
 
       const isImage = annot instanceof HTMLImageElement;
       annot.insertAdjacentElement(
-        isImage ? 'afterend' : 'afterbegin',
+        isImage ? 'afterend' : 'afterend',
         createEl('a', {
-          text: 'Go to annotation',
+          text: 'pdf',
           href: `zotero://open-pdf/library/items/${attachmentKey}?page=${json.pageLabel}&annotation=${json.annotationKey}`,
         })
       );
       annot.insertAdjacentElement(
-        isImage ? 'afterend' : 'afterbegin',
+        isImage ? 'afterend' : 'afterend',
         createSpan({ text: ' ' })
       );
     } catch (e) {
